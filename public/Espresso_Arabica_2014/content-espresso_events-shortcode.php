@@ -53,17 +53,24 @@ $event_class = apply_filters( 'FHEE__content_espresso_events__event_class', $eve
 
 <?php elseif ( is_archive() ) : ?>
 
-	<div id="espresso-event-list-header-dv-<?php echo $post->ID;?>" class="espresso-event-header-dv">
+	<!-- <div id="espresso-event-list-header-dv-<?php echo $post->ID;?>" class="espresso-event-header-dv">
 		<?php espresso_get_template_part( 'content', 'espresso_events-thumbnail' ); ?>
 		<?php espresso_get_template_part( 'content', 'espresso_events-header' ); ?>
-	</div>
+	</div> -->
 
 	<div class="espresso-event-list-wrapper-dv">
-		<?php espresso_event_content_or_excerpt(); ?>
-		<?php //espresso_get_template_part( 'content', 'espresso_events-tickets' ); ?>
-		<?php //espresso_get_template_part( 'content', 'espresso_events-datetimes' ); ?>
+	<!-- <?php espresso_get_template_part( 'content', 'espresso_events-header' ); ?> -->
+
+		<h3><a class="ee-event-header-lnk" href="<?php the_permalink(); ?>"<?php echo \EED_Events_Archive::link_target();?>>
+            <?php the_title(); ?>
+        </a></h3>
+		
+	<?php echo "</{$tag}>"; ?>
+		<?php //espresso_event_content_or_excerpt(); ?>
+		<?php espresso_get_template_part( 'content', 'espresso_events-tickets' ); ?>
+		<?php espresso_get_template_part( 'content', 'espresso_events-datetimes' ); ?>
 		<?php //espresso_get_template_part( 'content', 'espresso_events-details' ); ?>
-		<?php //espresso_get_template_part( 'content', 'espresso_events-venues' ); ?>
+		<?php espresso_get_template_part( 'content', 'espresso_events-venues' ); ?>
 	</div>
 
 <?php endif; ?>
