@@ -163,7 +163,7 @@ class EE_Default_Line_Item_Display_Strategy implements EEI_Line_Item_Display
         }
 
         // name td
-        $html .= EEH_HTML::td($name_and_desc, '', 'item_l');
+        $html .= EEH_HTML::td($name_and_desc, '', 'item_l ticket_name');
         // quantity td
         $html .= EEH_HTML::td($line_item->quantity(), '', 'item_l jst-rght');
         $tax_rate = $line_item->is_taxable()
